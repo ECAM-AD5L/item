@@ -102,13 +102,3 @@ paths:
         200:
           description: OK
 
-
-#
-#
-#parameters:
-#  id:
-#    name: "id"
-#    description: "Pet's Unique identifier"
-#    in: "path"
-#    type: "string"
-#    required: "true"
