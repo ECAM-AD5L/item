@@ -1,0 +1,114 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api/item"
+
+# Paths supported by the server application
+paths:
+  /get:
+    get:
+      operationId: "item.get"
+      tags:
+        - "Item"
+      summary: "The people data structure supported by the server application"
+      description: "Get the item"
+      responses:
+        200:
+          description: "Successful search item"
+          schema:
+            type: "array"
+            items:
+              properties:
+                id:
+                  type: "string"
+                name:
+                  type: "string"
+                price:
+                  type: "string"
+                description:
+                   type: "array"
+                   items:
+                     properties:
+                       color:
+                         type: "string"
+                       model:
+                         type: "string"
+
+
+
+  /get/{id}:
+    get:
+      operationId: "item.get_i"
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The unique id to delete
+      responses:
+        204:
+          description: Successful geted item
+        404:
+          description: Id does not exist
+
+
+  /delete/{id}:
+    get:
+      operationId: "item.delete"
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The unique id to delete
+      responses:
+        204:
+          description: Successful delete item
+        404:
+          description: Id does not exist
+
+
+  /insert:
+    post:
+      operationId: "item.insert"
+      tags:
+        - "Insert"
+      summary: "The item data structure supported by the server application"
+      description: "Insert item"
+      parameters:
+        - in: formData
+          name: id
+          type : string
+        - in: formData
+          name: name
+          type: string
+        - in: formData
+          name: price
+          type: string
+        - in: formData
+          name: color
+          type: string
+        - in: formData
+          name: model
+          type: string
+      responses:
+        200:
+          description: OK
+
+
+#
+#
+#parameters:
+#  id:
+#    name: "id"
+#    description: "Pet's Unique identifier"
+#    in: "path"
+#    type: "string"
+#    required: "true"
