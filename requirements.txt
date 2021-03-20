@@ -11,7 +11,7 @@ get==2018.11.19
 idna==2.7
 inflection==0.3.1
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 jsonconvert==1.0
 jsonschema==2.6.0
 MarkupSafe==1.1.0
